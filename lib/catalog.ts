@@ -35,3 +35,12 @@ export function filterProducts(query: string, category: string) {
     normalize(product.name + ' ' + product.category).includes(normalize(query.trim()))
   );
 }
+
+export function readCatalogLocation(search: string) {
+  const params = new URLSearchParams(search);
+  const requestedCategory = params.get('categoria') ?? '';
+  return {
+    query: params.get('q') ?? '',
+    category: categories.includes(requestedCategory) ? requestedCategory : categories[0],
+  };
+}

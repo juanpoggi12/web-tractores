@@ -1,5 +1,17 @@
 # Sistema visual implementado — versión premium
 
+## Actualización institucional inspirada en la referencia
+
+El inicio toma de https://carlosandretich.com/ la secuencia institucional, familias de productos y cobertura nacional, no su identidad, cifras, marcas, imágenes ni textos. La portada agrícola crece a 36 rem en escritorio y el titular a un máximo de 6 rem. El buscador y el acceso al catálogo permanecen visibles.
+
+La presentación de Orlandini ahora precede al catálogo: título de tres líneas, texto comercial comprobado y enlace a Nosotros. Cuatro familias visuales abren el catálogo con la categoría seleccionada; las imágenes reutilizan el atlas ilustrativo documentado. La selección de tres piezas conserva consultas individuales. Una sección azul comunica envíos y atención en Rafaela sin promesas de plazos.
+
+El pie institucional azul reúne logo original sobre blanco, páginas y contacto. No se agregaron colores, fuentes ni dependencias. Familias en cuatro columnas, dos bajo 1100 px y una bajo 480 px. Los bloques institucionales se apilan en móvil. Se preservan foco visible y movimiento reducido.
+
+frontend-design guio composición y jerarquía; Impeccable bolder/craft-floor/polish guio la amplificación del sistema existente. Project Kickoff se inspeccionó y no se aplicó: es una plantilla de presentación, no web. No se modificó su referencia.
+
+Verificación: compilación, TypeScript y pruebas estáticas incluyendo destinos por categoría. No se hizo QA visual de navegador. Detector ejecutado una vez, sin hallazgos mecánicos; conserva la advertencia COMP_ROUND_OPEN heredada sin alterar su estado ni afirmar aprobación visual.
+
 La mejora amplifica la identidad existente de Tractopartes Orlandini. No cambia logo, fuentes, datos comerciales ni el flujo de consultas. Anthropic frontend-design e Impeccable (bolder, craft-floor y polish) guían jerarquía, escala y consistencia.
 
 ## Paleta

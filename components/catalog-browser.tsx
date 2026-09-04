@@ -1,15 +1,16 @@
 'use client';
 import { useEffect, useState, type FormEvent } from 'react';
 import { ArrowUpRight, Search, X, SlidersHorizontal, Wrench } from 'lucide-react';
-import { categories, products, whatsapp, filterProducts } from '@/lib/catalog';
+import { categories, products, whatsapp, filterProducts, readCatalogLocation } from '@/lib/catalog';
 import { ProductCard } from './product-card';
 
 export function CatalogBrowser() {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState(categories[0]);
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setQuery(params.get('q') ?? '');
+    const location = readCatalogLocation(window.location.search);
+    setQuery(location.query);
+    setCategory(location.category);
   }, []);
   const filtered = filterProducts(query, category);
   function showResults(event: FormEvent<HTMLFormElement>) {

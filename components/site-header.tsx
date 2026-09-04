@@ -8,8 +8,8 @@ export function SiteHeader() {
       <div className="utility">
         <div className="shell utility-inner">
           <span><MapPin size={14} /> Rafaela, Santa Fe</span>
-          <span>Repuestos para el trabajo de todos los días</span>
-          <a href={whatsapp()} target="_blank" rel="noopener noreferrer">Atención personalizada <ArrowUpRight size={14} /></a>
+          <span>Venta mayorista y minorista</span>
+          <a href={whatsapp()} target="_blank" rel="noopener noreferrer">WhatsApp 03492 41-4532 <ArrowUpRight size={14} /></a>
         </div>
       </div>
 

@@ -76,3 +76,17 @@ test('Filtros combinados toleran tildes, espacios y mayúsculas', async () => {
   assert.equal(filterProducts('zzzz', categories[0]).length, 0);
   assert.equal(filterProducts('bomba', 'Tren delantero').length, 0);
 });
+
+test('Familias de Inicio abren el catálogo con una categoría válida', async () => {
+  const ts = await import('typescript');
+  const source = readFileSync(resolve(root, 'lib/catalog.ts'), 'utf8');
+  const { outputText } = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } });
+  const { readCatalogLocation, categories } = await import('data:text/javascript;base64,' + Buffer.from(outputText).toString('base64'));
+  const home = readFileSync(resolve(root, 'dist/client/index.html'), 'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+  const links = [...home.matchAll(/href="(\/catalogo\?categoria=[^"]+)"/g)];
+  assert.equal(links.length, 4);
+  const selected = links.map(([, href]) => readCatalogLocation(new URL(href, 'https://example.test').search).category);
+  assert.deepEqual(selected, categories.slice(1));
+  assert.deepEqual(readCatalogLocation('?q=bomba&categoria=inexistente'), { query: 'bomba', category: categories[0] });
+  assert.deepEqual(readCatalogLocation(''), { query: '', category: categories[0] });
+});

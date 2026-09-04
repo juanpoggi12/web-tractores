@@ -446,3 +446,118 @@ main:focus, .catalog-results:focus { outline: none; }
   .preview-grid > :last-child { display: block; }
   .contact-cover h1 { font-size: clamp(3.5rem, 13vw, 4.75rem); }
 }
+
+/* Institutional home: broad photographic cover, company, families, national service. */
+.home-hero .hero-inner { min-height: 36rem; }
+.home-hero .hero-media { inset-inline-start: 25%; }
+.home-hero .hero-media img { object-position: 72% 54%; }
+.home-hero::after { background: linear-gradient(90deg, #142f4b 0%, #142f4bf7 27%, #142f4bd9 42%, #142f4b29 72%, #142f4b0d 100%); }
+.home-hero .hero-copy { width: 65%; padding-block: 4rem 6rem; }
+.home-hero h1 { font-size: clamp(3.75rem, 6.7vw, 6rem); max-width: 16ch; }
+.home-hero p { font-size: 1.125rem; line-height: 1.6; }
+.home-hero .search { margin-top: 2rem; max-width: 33rem; }
+.home-hero-link { display: inline-flex; align-items: center; gap: .75rem; margin-top: 1rem; min-height: 2.75rem; color: var(--yellow); font-size: .9375rem; font-weight: 600; }
+.home-hero-link:hover { text-decoration: underline; }
+.hero-discover { position: absolute; left: 0; bottom: 1.5rem; display: flex; align-items: center; gap: .8rem; min-height: 2.75rem; font-size: .875rem; }
+.hero-discover:hover { color: var(--yellow); }
+.hero-caption { position: absolute; right: 0; bottom: 1.75rem; font-size: .75rem; background: var(--navy); padding: .25rem .5rem; }
+.home .service-inner { min-height: 5rem; }
+.company-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; padding-block: 6rem; align-items: center; }
+.company-title h2 { font-size: clamp(3.75rem, 6vw, 5.5rem); line-height: .98; }
+.company-copy h3 { font: 600 2.5rem/1.12 'Barlow Condensed', sans-serif; letter-spacing: -.02em; }
+.company-copy p { margin-top: 1.25rem; color: var(--muted-foreground); max-width: 53ch; }
+.company-copy p:first-of-type { color: var(--navy); font-size: 1.125rem; }
+.company-copy .button { margin-top: 1.75rem; }
+.families-section { background: var(--muted); padding-block: 5rem 3rem; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 2.75rem; }
+.section-heading h2 { font-size: clamp(3rem, 4.8vw, 4.25rem); }
+.section-heading > p { color: var(--muted-foreground); }
+.family-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+.family-card { min-width: 0; }
+.family-image { aspect-ratio: 1; position: relative; overflow: hidden; border-radius: .875rem; background: #edf0f1; }
+.family-caption { display: flex; justify-content: space-between; gap: .75rem; padding-block: 1.25rem; align-items: center; }
+.family-caption h3 { font: 600 clamp(1.75rem, 2.4vw, 2.25rem)/1.05 'Barlow Condensed', sans-serif; max-width: 14ch; }
+.family-open { display: grid; place-items: center; min-width: 2.75rem; height: 2.75rem; background: var(--yellow); color: var(--navy); border-radius: .3rem; }
+.family-card:hover .family-open { background: var(--navy); color: #fff; }
+.family-card:hover h3 { text-decoration: underline; text-underline-offset: .15em; }
+.families-close { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; margin-top: 1.25rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.families-close p { font-size: .9375rem; color: var(--muted-foreground); }
+.national-section { background: var(--navy); color: #fff; }
+.national-inner { display: grid; grid-template-columns: 1.25fr 1fr; gap: 7rem; align-items: center; padding-block: 5rem; }
+.national-title h2 { font-size: clamp(3.25rem, 5.2vw, 4.75rem); }
+.national-details > div { display: grid; grid-template-columns: 2rem 1fr; gap: .8rem 1.25rem; }
+.national-details > div + div { padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #5a6f84; }
+.national-details svg { color: var(--yellow); }
+.national-details h3 { font: 600 2.25rem/1.1 'Barlow Condensed', sans-serif; }
+.national-details p { grid-column: 2; color: #d2e0ec; max-width: 38ch; }
+.site-footer { padding-block: 3.5rem 1.5rem; background: var(--navy); color: #d2e0ec; }
+.footer-top { display: grid; grid-template-columns: 1.3fr .65fr 1fr; gap: 4rem; align-items: start; }
+.footer-logo { display: inline-flex; padding: .5rem 1rem; background: #fff; border-radius: .3rem; }
+.footer-logo img { width: 13.5rem; height: auto; }
+.footer-brand-block > p { margin-top: 1.25rem; font-size: .9375rem; }
+.footer-pages { display: flex; flex-direction: column; align-items: flex-start; }
+.footer-pages a { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: 1rem; color: #fff; }
+.footer-contact { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-size: .9375rem; }
+.footer-contact > a { min-height: 2.75rem; }
+.footer-contact svg { display: inline; vertical-align: middle; }
+.footer-phone { display: grid; grid-template-columns: 1fr auto; gap: .25rem 1rem; }
+.footer-phone span { font-size: .875rem; }
+.footer-phone strong { grid-row: 2; font: 600 2.25rem/1.15 'Barlow Condensed', sans-serif; color: #fff; }
+.footer-phone > svg { grid-column: 2; grid-row: 2; align-self: center; color: var(--yellow); }
+.site-footer a:hover { color: var(--yellow); text-decoration: underline; }
+.site-footer a:focus-visible { outline-color: var(--yellow); }
+.footer-bottom { display: flex; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #5a6f84; font-size: .8125rem; padding-right: 3.5rem; }
+.footer-bottom p { font-size: .75rem; }
+@media (hover: hover) and (pointer: fine) {
+  .family-card:hover .product-art { transform: scale(1.035); }
+}
+@media (max-width: 1100px) {
+  .company-intro, .national-inner { gap: 3rem; }
+  .family-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 2rem; }
+  .family-caption h3 { max-width: none; font-size: 2.25rem; }
+  .footer-top { gap: 2rem; }
+}
+@media (max-width: 800px) {
+  .home-hero .hero-copy { width: 85%; }
+  .home-hero h1 { font-size: clamp(3.5rem, 8.6vw, 5rem); }
+  .company-intro { gap: 2.5rem; padding-block: 4rem; }
+  .company-title h2 { font-size: 4rem; }
+  .national-inner { grid-template-columns: 1fr; gap: 3rem; padding-block: 3.5rem; }
+  .national-details { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .national-details > div + div { padding-top: 0; margin-top: 0; border: 0; }
+  .families-close { align-items: flex-start; flex-direction: column; gap: .75rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem 3rem; }
+  .footer-brand-block { grid-column: 1 / -1; }
+}
+@media (max-width: 700px) {
+  .home-hero .hero-inner { min-height: 34rem; }
+  .home-hero .hero-media { inset: 0; }
+  .home-hero .hero-media img { opacity: .7; object-position: 72% center; }
+  .home-hero::after { background: linear-gradient(90deg, #142f4bf5 0%, #142f4bdf 35%, #142f4b80 100%); }
+  .home-hero .hero-copy { width: 100%; padding-block: 3rem 5.5rem; }
+  .home-hero h1 { font-size: clamp(3rem, 9.4vw, 4rem); }
+  .home-hero p { font-size: 1rem; }
+  .home-hero .search { margin-top: 1.5rem; }
+  .hero-caption { bottom: 1rem; }
+  .hero-discover { bottom: 1rem; }
+  .company-intro { grid-template-columns: 1fr; gap: 2rem; padding-block: 3.5rem; }
+  .company-title h2 { font-size: 4rem; }
+  .company-copy h3 { font-size: 2.25rem; }
+  .section-heading { display: block; margin-bottom: 2rem; }
+  .section-heading > p { margin-top: 1.25rem; }
+  .families-section { padding-block: 3.5rem 2.5rem; }
+  .family-grid { gap: 1.5rem 1rem; }
+  .family-caption { align-items: flex-start; }
+  .family-caption h3 { font-size: 1.875rem; }
+  .national-details { grid-template-columns: 1fr; }
+  .national-details > div + div { padding-top: 1.75rem; border-top: 1px solid #5a6f84; }
+  .national-title h2 { font-size: 3.5rem; }
+  .footer-bottom { margin-top: 2rem; gap: .75rem; }
+}
+@media (max-width: 480px) {
+  .family-grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .family-caption h3 { font-size: 2.25rem; }
+  .footer-top { column-gap: 1.25rem; grid-template-columns: .65fr 1fr; }
+  .footer-phone strong { font-size: 1.875rem; }
+  .footer-phone { column-gap: .5rem; }
+}
