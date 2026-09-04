@@ -28,7 +28,6 @@ Catálogo responsive sin precios, con búsqueda por nombre/familia, categorías 
 - OpenAI Sites: estructura, exportación estática, alojamiento privado. OpenAI Imagegen: fotografía agrícola e imágenes ilustrativas de piezas.
 - Se aplicaron criterios de ambas skills de diseño; no se completó el flujo opcional de elección de tres composiciones de Impeccable. No se afirma aprobación visual ni prueba de navegador. La revisión está limitada a fuente, compilación y pruebas de salida estática.
 
-## Recursos
 ## Mantenimiento
 
 La plantilla fijada por Sites conserva avisos de npm audit en herramientas de desarrollo/servidor (incluidos vinext, Vite y react-server-dom-webpack). Se publica únicamente la exportación estática, sin Worker, endpoints de servidor ni subida de imágenes. No usar este prototipo como base de un servidor público sin actualizar y volver a auditar esas dependencias. No se ejecutó audit fix --force.

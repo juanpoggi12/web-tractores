@@ -29,7 +29,7 @@ export default function Home() {
       <header className="header"><div className="shell header-inner">
         <a href="#" className="brand" aria-label="Tractopartes Alejandro Orlandini, inicio"><img src="/orlandini-logo.webp" alt="Alejandro Orlandini Tractopartes" width="270" height="90" /></a>
         <nav aria-label="Navegación principal"><a className="nav-active" href="#catalogo">Catálogo</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav>
-        <a className="button header-cta" aria-label="Consultar por WhatsApp" href={whatsapp()} target="_blank" rel="noopener noreferrer"><MessageCircle size={18} /><span>Hablemos por WhatsApp</span></a>
+        <a className="button header-cta" aria-label="Hablemos por WhatsApp" href={whatsapp()} target="_blank" rel="noopener noreferrer"><MessageCircle size={18} /><span>Hablemos por WhatsApp</span></a>
       </div></header>
       <main>
         <section className="hero" aria-labelledby="hero-title">

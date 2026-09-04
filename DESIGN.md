@@ -14,7 +14,7 @@ Barlow Condensed 600 para títulos; Manrope 400/600 para interfaz y cuerpo. Fuen
 
 Contenedor máximo 1280 px. Catálogo con columna de categorías de 205 px y grilla de tres productos. Bajo 800 px las categorías se desplazan horizontalmente. Bajo 600 px, dos productos por fila; bajo 360 px, uno. No hay carrito ni precios.
 
-La búsqueda combina nombre y categoría, normaliza tildes y no distingue mayúsculas. El estado vacío permite limpiar filtros o consultar. Cada mensaje de WhatsApp incluye el producto y aclara su carácter demostrativo. El número proviene del enlace de la página comercial, no de una normalización supuesta.
+La búsqueda combina nombre y categoría, normaliza tildes y no distingue mayúsculas. El estado vacío permite limpiar filtros o consultar. Cada consulta desde una ficha incluye el producto y aclara su carácter demostrativo; los enlaces generales solicitan asesoramiento. El número proviene del enlace de la página comercial, no de una normalización supuesta.
 
 ## Accesibilidad y movimiento
 

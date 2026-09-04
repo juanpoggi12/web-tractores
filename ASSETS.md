@@ -1,0 +1,13 @@
+# Procedencia de imágenes
+
+Los logos provienen de los enlaces públicos documentados en README.md. Las fuentes se conservan con su licencia.
+
+## public/productos-muestra.png
+Generada con OpenAI Imagegen, 1536×1024, seis celdas 512×512. Ilustrativa, sin equivalencia comercial garantizada. Prompt exacto:
+
+Use case: product-mockup. Asset type: high-resolution CSS background atlas for a prototype tractor parts catalog. Create ONE photoreal product photography contact sheet, landscape 3:2 aspect ratio, ideally 3072 x 2048 pixels. Precisely 3 equal columns by 2 equal rows, six perfectly equal rectangular cells, invisible boundaries exactly at 1/3 and 2/3 canvas width and 1/2 height. Seamless consistent pale cool gray #f2f4f5 background throughout all cells. Each product centered at the center of its own cell, generous margins, entire object and its soft shadow inside its cell, no overlaps across cell boundaries. TOP LEFT: tractor clutch disc. TOP MIDDLE: steel hydraulic gear pump. TOP RIGHT: bronze and steel taper roller bearing. BOTTOM LEFT: pleated cylindrical tractor air filter. BOTTOM MIDDLE: metal tractor water pump. BOTTOM RIGHT: three silver engine pistons grouped together. All six are generic illustrative demo tractor parts, no brand or model specificity. Consistent premium studio product photography, clean sharp realistic metal and pleated paper textures, soft diffuse light, subtle contact shadows, comparable visual scale. No borders, no dividers, no text, no labels, no logos, no watermark, no other objects. Exact equal cell layout is critical for CSS atlas cropping.
+
+## public/tractor-campo.png
+Generada con OpenAI Imagegen, 1672×941. Escena ilustrativa; no es una fotografía de instalaciones ni maquinaria real del negocio. Hay pequeñas marcas visuales del generador en el capot; no se usan como prueba de ninguna marca. Prompt exacto:
+
+Use case: photorealistic-natural. Asset type: wide cinematic editorial hero photo for prototype tractor parts catalog. Generate ONE high-resolution wide landscape image, ideally 3072 x 1728 pixels. A real-looking generic unbranded blue agricultural tractor in cultivated Argentina countryside, side profile angled slightly forward, positioned on the RIGHT side of the composition. Entire tractor visible with natural room around it. Cultivated flat countryside, earth and subtle airborne dust, overcast warm afternoon light. Steel-blue and brown palette. High-end editorial photography, authentic agricultural setting, realistic tires, metal, machinery details, natural textures and atmospheric depth. Left side remains mainly open countryside for a website layout. No logos, no text, no watermark, no invented signage, no brand or model specificity.
