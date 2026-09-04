@@ -59,10 +59,19 @@ for (const [route, file] of Object.entries(routes)) {
   });
 }
 
-test('Búsqueda desde Inicio abre el catálogo con el término ingresado', () => {
-  const home = readFileSync(resolve(root, 'dist/client/index.html'), 'utf8');
-  assert.match(home, /<form[^>]*action="\/catalogo"[^>]*method="get"/);
-  assert.match(home, /<input[^>]*name="q"/);
+test('Inicio institucional sin mezclar herramientas o secciones del catálogo', () => {
+  const home = readFileSync(resolve(root, 'dist/client/index.html'), 'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
+  const main = home.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)?.[1];
+  assert.ok(main);
+  assert.equal([...main.matchAll(/<section\b/g)].length, 1);
+  assert.equal(main.includes('<form'), false);
+  assert.equal(main.includes('product-card'), false);
+  assert.equal(main.includes('family-grid'), false);
+  assert.equal(main.includes('service-strip'), false);
+  assert.ok(main.includes('Alejandro'));
+  assert.ok(main.includes('Orlandini'));
+  assert.ok(main.includes('href="/nosotros"'));
+  assert.ok(main.includes('href="/catalogo"'));
 });
 
 test('Filtros combinados toleran tildes, espacios y mayúsculas', async () => {
@@ -77,16 +86,14 @@ test('Filtros combinados toleran tildes, espacios y mayúsculas', async () => {
   assert.equal(filterProducts('bomba', 'Tren delantero').length, 0);
 });
 
-test('Familias de Inicio abren el catálogo con una categoría válida', async () => {
+test('El catálogo conserva acceso directo a categorías por URL', async () => {
   const ts = await import('typescript');
   const source = readFileSync(resolve(root, 'lib/catalog.ts'), 'utf8');
   const { outputText } = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } });
   const { readCatalogLocation, categories } = await import('data:text/javascript;base64,' + Buffer.from(outputText).toString('base64'));
-  const home = readFileSync(resolve(root, 'dist/client/index.html'), 'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '');
-  const links = [...home.matchAll(/href="(\/catalogo\?categoria=[^"]+)"/g)];
-  assert.equal(links.length, 4);
-  const selected = links.map(([, href]) => readCatalogLocation(new URL(href, 'https://example.test').search).category);
-  assert.deepEqual(selected, categories.slice(1));
+  for (const category of categories.slice(1)) {
+    assert.equal(readCatalogLocation('?categoria=' + encodeURIComponent(category)).category, category);
+  }
   assert.deepEqual(readCatalogLocation('?q=bomba&categoria=inexistente'), { query: 'bomba', category: categories[0] });
   assert.deepEqual(readCatalogLocation(''), { query: '', category: categories[0] });
 });

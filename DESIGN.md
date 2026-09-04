@@ -1,59 +1,25 @@
-# Sistema visual implementado — versión premium
+# Sistema visual de Tractopartes Orlandini
 
-## Actualización institucional inspirada en la referencia
+## Identidad
+Azul #142f4b, amarillo #f8ce44, blanco #ffffff y gris #f1f4f6. Texto #142a41 y secundario #5b6976. Verde #176b50 solo para WhatsApp flotante.
+Barlow Condensed 600 para títulos y Manrope 400/600 para cuerpo e interfaz, autoalojadas. Cuerpo 16 px; etiquetas frecuentes 14–16 px y metadatos 12–13 px. Contenedor de 1320 px.
 
-El inicio toma de https://carlosandretich.com/ la secuencia institucional, familias de productos y cobertura nacional, no su identidad, cifras, marcas, imágenes ni textos. La portada agrícola crece a 36 rem en escritorio y el titular a un máximo de 6 rem. El buscador y el acceso al catálogo permanecen visibles.
+## Inicio vigente
+El usuario rechazó el inicio largo por mezclar todas las páginas y pidió eliminarlo. Fue reemplazado por una sola portada institucional. La referencia https://carlosandretich.com/ abre con fondo audiovisual, identidad, descripción de actividad y enlaces institucionales. Orlandini adapta ese formato inicial con su fotografía ilustrativa existente, nombre, actividad, breve descripción y enlaces a Nosotros y Catálogo; no replica todo el scroll de la referencia, datos comerciales ajenos ni video que no posee.
 
-La presentación de Orlandini ahora precede al catálogo: título de tres líneas, texto comercial comprobado y enlace a Nosotros. Cuatro familias visuales abren el catálogo con la categoría seleccionada; las imágenes reutilizan el atlas ilustrativo documentado. La selección de tres piezas conserva consultas individuales. Una sección azul comunica envíos y atención en Rafaela sin promesas de plazos.
+La portada cubre como mínimo el alto disponible bajo el encabezado, con fotografía a sangre y velo azul para lectura. Titular hasta 6 rem; descripción hasta 45ch. Dos accesos, uno principal amarillo y otro delineado. En móvil el contenido ocupa el ancho disponible y los botones se apilan en pantallas estrechas. La altura puede crecer con el texto.
 
-El pie institucional azul reúne logo original sobre blanco, páginas y contacto. No se agregaron colores, fuentes ni dependencias. Familias en cuatro columnas, dos bajo 1100 px y una bajo 480 px. Los bloques institucionales se apilan en móvil. Se preservan foco visible y movimiento reducido.
+Se retiraron del Inicio: eslogan, buscador, franja de servicios, presentación duplicada, familias visuales, fichas, cobertura y banda de contacto. Las funciones y datos permanecen en sus páginas dedicadas. El inicio anterior y sus estilos específicos quedan recuperables en Git. No se cambiaron las demás páginas ni el pie compartido.
 
-frontend-design guio composición y jerarquía; Impeccable bolder/craft-floor/polish guio la amplificación del sistema existente. Project Kickoff se inspeccionó y no se aplicó: es una plantilla de presentación, no web. No se modificó su referencia.
+## Páginas y componentes compartidos
+Navegación Inicio, Nosotros, Catálogo y Contacto; aria-current para página activa, idioma es-AR, un h1 por ruta, salto al contenido y metadatos independientes. Pie azul con logo original, páginas, ubicación y WhatsApp.
+Nosotros mantiene presentación institucional, imagen ilustrativa, públicos atendidos y cobertura. Contacto mantiene WhatsApp, domicilio y guía de consulta sin formulario ficticio ni horarios inventados.
+Catálogo mantiene buscador, filtros y seis productos de muestra sin precios. Tres columnas con categorías laterales en escritorio amplio, dos bajo 1250 px, categorías horizontales bajo 960 px y una columna bajo 560 px. Las URL con q y categoria siguen admitidas.
 
-Verificación: compilación, TypeScript y pruebas estáticas incluyendo destinos por categoría. No se hizo QA visual de navegador. Detector ejecutado una vez, sin hallazgos mecánicos; conserva la advertencia COMP_ROUND_OPEN heredada sin alterar su estado ni afirmar aprobación visual.
+## Interacción y verdad
+Búsqueda sin distinguir tildes o mayúsculas, filtros combinados, contador aria-live, estado vacío con recuperación. Consulta específica por WhatsApp con el nombre de la pieza. Foco visible y reduced-motion respetado. Fuentes y activos locales, procedencia en ASSETS.md.
+No inventar stock, códigos, compatibilidades, plazos, historia, cifras, marcas representadas o testimonios. Imágenes y productos ilustrativos. Contacto comercial pendiente de confirmación.
 
-La mejora amplifica la identidad existente de Tractopartes Orlandini. No cambia logo, fuentes, datos comerciales ni el flujo de consultas. Anthropic frontend-design e Impeccable (bolder, craft-floor y polish) guían jerarquía, escala y consistencia.
-
-## Paleta
-
-Azul #142f4b: portada, categorías activas, consultas y sección institucional. Amarillo #f8ce44: acciones principales, ayuda contextual y sección de contacto. Blanco #ffffff: lectura del catálogo. Gris frío #f1f4f6: superficies auxiliares. Texto #142a41, secundario #5b6976. Verde #176b50 reservado al acceso flotante a WhatsApp.
-
-La portada usa una transición de opacidad sobre la fotografía para separar texto y maquinaria; no se aplica gradiente al texto.
-
-## Tipografía
-
-Barlow Condensed 600 en títulos. Manrope 400/600 en cuerpo e interfaz, autoalojadas. Escala en rem; cuerpo 16 px, controles frecuentes 14–16 px y metadatos 12–13 px. Título principal hasta 88 px, catálogo hasta 64 px y contacto hasta 76 px. El buscador móvil mantiene 16 px.
-
-## Composición
-
-Contenedor máximo 1320 px. Inicio conserva la fotografía de tractor a la derecha, titular blanco a la izquierda y búsqueda integrada en la portada. Su formulario GET abre /catalogo con el término ingresado. Dentro del catálogo, el buscador filtra al escribir; enviarlo desplaza y enfoca los resultados. No hay video, carrusel, métricas ficticias ni elementos flotantes decorativos.
-
-El catálogo utiliza columna de categorías de 224 px y tres productos por fila en pantallas amplias. Bajo 1250 px, dos columnas; bajo 960 px, categorías horizontales; bajo 560 px, una pieza amplia por fila. Se mantiene completa cada celda cuadrada del atlas.
-
-Las fotografías tienen esquinas de 14 px; los botones son más rectos. Las fichas no se envuelven en cajas anidadas. Cada consulta tiene un botón sólido; cambia a amarillo al interactuar. El bloque de contacto amarillo cierra el recorrido.
-
-## Interacción y accesibilidad
-
-Búsqueda combinada por nombre y categoría, sin distinguir tildes o mayúsculas; contador aria-live; filtros aria-pressed. Estado vacío con limpieza de filtros y consulta. Idioma es-AR, salto al contenido, etiquetas para iconos y foco interior en las categorías desplazables. Enlaces externos con noopener noreferrer.
-
-Una única apertura de la fotografía en la portada; acercamiento moderado de piezas solo con puntero preciso. Toda animación y desplazamiento suave se desactivan con prefers-reduced-motion.
-
-## Verdad del contenido
-
-Logo original. Seis productos de muestra con indicación de imagen ilustrativa. Ningún precio, código, stock, compatibilidad, testimonio o cifra comercial inventado. Mensajes desde cada ficha incluyen el nombre del producto; consultas generales solicitan asesoramiento. WhatsApp tomado del enlace de la página comercial, pendiente de confirmación del cliente.
-
-## Alcance de la revisión
-
-En este turno el usuario eligió explícitamente «Solo mejorá el diseño por ahora». Por eso no se hicieron capturas, clics ni pruebas de navegador; no se certifica QA visual. Se verifican compilación, tipos y contratos de la exportación estática.
-
-El detector de Impeccable se ejecutó una vez y devolvió una lista vacía junto con una advertencia de una ronda de composiciones heredada sin cerrar. Esa advertencia no se ocultó ni se tomó como prueba de calidad. No se reinició aquel flujo ni se alteró su estado como efecto lateral de esta mejora.
-
-## Extensión multipágina
-
-La identidad permanece sin cambios. Navegación compartida con Inicio, Nosotros, Catálogo y Contacto, estado activo aria-current y cuatro destinos siempre visibles en móvil. Cada ruta tiene un h1, metadatos propios y salto al contenido.
-
-Inicio conserva su portada, muestra tres piezas y enlaza a Nosotros. Nosotros alterna presentación azul, fotografía agrícola ilustrativa de ancho completo, contenido institucional y atención a productores, talleres y comercios. Catálogo abre directamente con título, búsqueda, categorías y seis piezas. Contacto abre con fondo amarillo, consulta WhatsApp y número grande; sigue con domicilio y guía de información útil para consultar, sin formulario ficticio ni horarios inventados.
-
-Se comparten encabezado, pie, fichas y banda de contacto. No hay nuevas dependencias. Los activos originales y generados mantienen su procedencia registrada en ASSETS.md. Las disposiciones de dos columnas se apilan a 800 px; la navegación se adapta a 700 px y los productos a 560 px.
-
-Validación de esta extensión: compilación estática de las cuatro rutas, TypeScript y ocho pruebas de contratos de salida y filtros. No se realizaron capturas ni QA de navegador, conforme al alcance confirmado. El detector se ejecutó una vez: cero hallazgos mecánicos y advertencia COMP_ROUND_OPEN heredada. No equivale a una aprobación visual ni a cumplimiento de todos los flujos opcionales de Impeccable. La ronda anterior no se reparó ni se marcó aprobada como efecto lateral.
+## Revisión y skills
+frontend-design guía jerarquía y composición; Impeccable distill/craft-floor guía quitar redundancias conservando las funciones en sus destinos. No se inició una ronda de alternativas.
+Compilación estática, TypeScript y nueve pruebas de contratos y filtros. No se hicieron pruebas visuales de navegador: siguen fuera del alcance solicitado. Un pase del detector, cero hallazgos mecánicos y advertencia heredada COMP_ROUND_OPEN; no se alteró el estado de esa ronda ni se afirmó aprobación visual.

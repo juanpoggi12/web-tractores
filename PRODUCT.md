@@ -17,6 +17,8 @@ Sitio de cuatro páginas: Inicio, Nosotros, Catálogo y Contacto. Catálogo sin 
 ## Brand Commitments
 Nombre Orlandini. Inspiración funcional de carlosandretich.com/productos; no copiar composición, colores, tipografías ni contenido. Priorizar las skills frontend-design de Anthropic e Impeccable de Paul Bakaus.
 
+Actualización explícita del usuario: sustituir Inicio por el formato de portada institucional de carlosandretich.com, sin mezclar allí todas las páginas. Conservar identidad propia y contenido de Orlandini; el buscador, filtros y fichas viven en Catálogo. La nueva indicación autoriza adaptar el formato inicial de referencia, no sus activos o afirmaciones comerciales.
+
 ## Evidence on Hand
 Página comercial: https://tractopartes-orlandini.laguia.online/ . Publica repuestos, domicilio Bv. Roca 529, Rafaela, y enlace WhatsApp +543492414532; pendiente de confirmación del cliente. Logo coincidente en https://www.agroads.com.ar/e/alejandro-orlandini-tractopartes/ . No se encontró Instagram verificable. Facebook enlazado por su página: https://www.facebook.com/orlandinitractopartes/ .
 
