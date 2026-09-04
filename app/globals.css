@@ -342,3 +342,107 @@ footer { background: #fff; padding-block: 2rem; color: #526578; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Shared identity, distinct composition for each destination. */
+main:focus, .catalog-results:focus { outline: none; }
+.text-link { display: inline-flex; align-items: center; gap: .75rem; min-height: 2.75rem; font-size: .9375rem; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; }
+.text-link:hover { color: #41688f; }
+.light-link { color: var(--yellow); }
+.light-link:hover { color: #ffe48e; }
+.catalog-heading > div p { margin-top: 1rem; color: var(--muted-foreground); }
+.home-selection { padding-block: 4.5rem 5rem; }
+.preview-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.catalog-page { padding-top: 3rem; }
+.catalog-heading h1 { font-size: clamp(3rem, 5vw, 4.5rem); }
+.catalog-page .catalog-heading { margin-bottom: 0; }
+.catalog-search { width: min(100%, 48rem); border: 1px solid var(--border); margin-block: 1.75rem 2.75rem; }
+.footer-main { flex-wrap: wrap; }
+.footer-navigation { display: flex; flex-wrap: wrap; gap: .5rem 2rem; width: 100%; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.footer-navigation a { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: .9375rem; font-weight: 600; color: var(--navy); }
+.footer-navigation a:hover { text-decoration: underline; }
+.institutional-cover { background: var(--navy); color: #fff; }
+.institutional-intro { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; padding-block: 4rem 3.5rem; align-items: end; }
+.institutional-intro h1 { font-size: clamp(3.5rem, 6vw, 5.5rem); }
+.institutional-intro p { color: #d2e0ec; max-width: 48ch; font-size: 1.0625rem; }
+.institutional-intro .text-link { margin-top: 1.25rem; }
+.institutional-photo { position: relative; margin: 0; }
+.institutional-photo img { width: 100%; height: clamp(19rem, 36vw, 32rem); object-fit: cover; object-position: center 58%; }
+.institutional-photo figcaption { position: absolute; bottom: 0; left: 0; padding: 1rem max(3rem, calc((100% - 1320px) / 2)); background: var(--navy); font-size: .875rem; display: flex; gap: 2rem; align-items: center; }
+.institutional-photo figcaption span { font-size: .75rem; color: #d2e0ec; white-space: nowrap; }
+.story-section { display: grid; grid-template-columns: 1.1fr 1fr; gap: 7rem; padding-block: 5.5rem; }
+.story-intro h2, .shipping-inner h2, .visit-block h2, .inquiry-guide h2 { font-size: clamp(2.75rem, 4.2vw, 3.75rem); }
+.story-intro p { margin-block: 1.75rem; max-width: 44ch; color: var(--muted-foreground); }
+.audience-list article + article { margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid var(--border); }
+.audience-list h3 { font: 600 2.125rem/1.1 'Barlow Condensed', sans-serif; }
+.audience-list p { margin-top: .75rem; color: var(--muted-foreground); max-width: 48ch; }
+.shipping-band { background: var(--navy); color: #fff; }
+.shipping-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 7rem; padding-block: 3.5rem; align-items: center; }
+.shipping-inner p { color: #d2e0ec; max-width: 48ch; }
+.shipping-inner .text-link { margin-top: 1rem; }
+.contact-cover { background: var(--yellow); }
+.contact-cover-inner { display: grid; grid-template-columns: 1.15fr 1fr; gap: 5rem; padding-block: 4rem; align-items: center; }
+.contact-cover h1 { font-size: clamp(3.75rem, 6.8vw, 5.75rem); }
+.contact-cover h1 + p { margin-top: 1.5rem; font-size: 1.0625rem; }
+.direct-contact { border-left: 1px solid #142f4b42; padding-left: 3.5rem; }
+.direct-contact h2 { font: 600 1rem/1.5 'Manrope', sans-serif; margin-top: 1.25rem; letter-spacing: 0; }
+.direct-phone { display: inline-block; font: 600 clamp(2.75rem, 4vw, 3.75rem)/1.15 'Barlow Condensed', sans-serif; margin-top: .35rem; }
+.direct-phone:hover { text-decoration: underline; }
+.direct-contact p { margin-top: .875rem; max-width: 35ch; }
+.direct-contact .button { margin-top: 1.5rem; }
+.contact-content { display: grid; grid-template-columns: .9fr 1.1fr; gap: 7rem; padding-block: 5rem; }
+.visit-block { padding: 2.5rem; background: var(--muted); border-radius: .875rem; align-self: start; }
+.visit-block h2 { margin-top: 1.25rem; }
+.visit-block address { display: flex; flex-direction: column; gap: .5rem; margin-block: 1.75rem; font-style: normal; }
+.visit-block address strong { font-size: 1.125rem; }
+.visit-block address span { color: var(--muted-foreground); }
+.visit-block .text-link { display: flex; width: fit-content; margin-top: 1rem; }
+.inquiry-guide { padding-top: .5rem; }
+.inquiry-guide > p { color: var(--muted-foreground); max-width: 49ch; margin-top: 1.25rem; }
+.inquiry-guide dl { margin: 2rem 0 0; }
+.inquiry-guide dl > div { padding-block: 1.25rem; border-top: 1px solid var(--border); }
+.inquiry-guide dt { font-weight: 600; }
+.inquiry-guide dd { margin: .4rem 0 0; color: var(--muted-foreground); }
+.inquiry-guide .inquiry-note { font-size: .875rem; }
+.inquiry-note a { text-decoration: underline; color: var(--navy); }
+.contact-bottom { background: var(--muted); }
+.contact-bottom > div { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-block: 2.75rem; }
+.contact-bottom h2 { font-size: clamp(2.25rem, 3.5vw, 3rem); }
+@media (max-width: 1100px) {
+  .institutional-intro, .story-section, .shipping-inner, .contact-content { gap: 3rem; }
+  .contact-cover-inner { gap: 2.5rem; }
+  .direct-contact { padding-left: 2rem; }
+  .institutional-photo figcaption { padding-inline: 2rem; }
+}
+@media (max-width: 800px) {
+  .preview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .preview-grid > :last-child { display: none; }
+  .institutional-intro, .story-section, .shipping-inner, .contact-content, .contact-cover-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .institutional-intro { padding-block: 3rem; }
+  .institutional-intro h1 { font-size: clamp(3.2rem, 8vw, 4.5rem); }
+  .institutional-intro p { max-width: 60ch; }
+  .story-section, .contact-content { padding-block: 3.5rem; }
+  .story-intro p, .audience-list p, .shipping-inner p { max-width: 60ch; }
+  .direct-contact { padding: 2rem 0 0; border-left: none; border-top: 1px solid #142f4b42; }
+  .direct-contact > svg { display: none; }
+  .direct-contact h2 { margin-top: 0; }
+  .contact-cover-inner { padding-block: 3rem; }
+  .contact-bottom > div { align-items: flex-start; flex-direction: column; gap: 1rem; }
+}
+@media (max-width: 700px) {
+  .header nav { justify-content: space-between; gap: .75rem; }
+  .header nav a { min-height: 3rem; }
+  .home-selection { padding-block: 3rem; }
+  .home-selection .catalog-heading .text-link { margin-top: 1rem; }
+  .catalog-search { margin-block: 1.5rem 2rem; }
+  .institutional-photo figcaption { position: static; padding: 1rem 20px; display: block; }
+  .institutional-photo figcaption span { display: block; margin-top: .5rem; }
+  .institutional-photo img { height: 20rem; object-position: 70% center; }
+  .footer-navigation { gap: .5rem 1.5rem; }
+  .footer-links a, .service-inner span { font-size: .875rem; }
+  .visit-block { padding: 2rem; }
+}
+@media (max-width: 560px) {
+  .preview-grid { grid-template-columns: minmax(0, 1fr); }
+  .preview-grid > :last-child { display: block; }
+  .contact-cover h1 { font-size: clamp(3.5rem, 13vw, 4.75rem); }
+}

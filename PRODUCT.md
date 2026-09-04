@@ -12,7 +12,7 @@ Prototipo de catálogo responsive para Alejandro Orlandini Tractores / Tractopar
 Inferencia de trabajo: propietarios de tractores, mecánicos y comercios de repuestos, consultando desde teléfono o escritorio.
 
 ## Capabilities and Constraints
-Catálogo sin precios, categorías, búsqueda, consulta específica por producto. El usuario solicitó buscar el logo en internet o Instagram. No modificar el proyecto GymNode vecino. Stock, códigos y compatibilidades exactas no fueron provistos: cualquier muestra debe declararse como tal.
+Sitio de cuatro páginas: Inicio, Nosotros, Catálogo y Contacto. Catálogo sin precios, categorías, búsqueda, consulta específica por producto. El usuario solicitó conservar colores y tipografías del diseño premium aprobado y tomar la organización funcional de la referencia. El usuario solicitó buscar el logo en internet o Instagram. No modificar el proyecto GymNode vecino. Stock, códigos y compatibilidades exactas no fueron provistos: cualquier muestra debe declararse como tal.
 
 ## Brand Commitments
 Nombre Orlandini. Inspiración funcional de carlosandretich.com/productos; no copiar composición, colores, tipografías ni contenido. Priorizar las skills frontend-design de Anthropic e Impeccable de Paul Bakaus.
