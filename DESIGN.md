@@ -1,29 +1,37 @@
-# Sistema visual implementado
+# Sistema visual implementado — versión premium
 
-Catálogo técnico de mostrador. Identidad azul y amarilla del logo encontrado; la inspiración de Andretich se limita a agrupar repuestos por familias.
+La mejora amplifica la identidad existente de Tractopartes Orlandini. No cambia logo, fuentes, datos comerciales ni el flujo de consultas. Anthropic frontend-design e Impeccable (bolder, craft-floor y polish) guían jerarquía, escala y consistencia.
 
 ## Paleta
 
-Azul profundo #142f4b: cabecera auxiliar, hero, categoría activa y sección institucional. Amarillo #f8ce44: énfasis de marca y CTA institucional. Blanco #ffffff: superficie principal. Gris frío #f1f4f6: superficies auxiliares. Texto #142a41, secundario #5b6976. Verde #176b50 exclusivamente en acceso flotante de consulta.
+Azul #142f4b: portada, categorías activas, consultas y sección institucional. Amarillo #f8ce44: acciones principales, ayuda contextual y sección de contacto. Blanco #ffffff: lectura del catálogo. Gris frío #f1f4f6: superficies auxiliares. Texto #142a41, secundario #5b6976. Verde #176b50 reservado al acceso flotante a WhatsApp.
+
+La portada usa una transición de opacidad sobre la fotografía para separar texto y maquinaria; no se aplica gradiente al texto.
 
 ## Tipografía
 
-Barlow Condensed 600 para títulos; Manrope 400/600 para interfaz y cuerpo. Fuentes autoalojadas. Display fluido por breakpoints entre 41 y 66 px. Controles de búsqueda móviles en 16 px para evitar zoom automático al enfocarlos.
+Barlow Condensed 600 en títulos. Manrope 400/600 en cuerpo e interfaz, autoalojadas. Escala en rem; cuerpo 16 px, controles frecuentes 14–16 px y metadatos 12–13 px. Título principal hasta 88 px, catálogo hasta 64 px y contacto hasta 76 px. El buscador móvil mantiene 16 px.
 
-## Estructura y comportamiento
+## Composición
 
-Contenedor máximo 1280 px. Catálogo con columna de categorías de 205 px y grilla de tres productos. Bajo 800 px las categorías se desplazan horizontalmente. Bajo 600 px, dos productos por fila; bajo 360 px, uno. No hay carrito ni precios.
+Contenedor máximo 1320 px. Fotografía de tractor a la derecha, titular blanco a la izquierda y búsqueda integrada en la portada. El buscador filtra al escribir; enviarlo desplaza hasta los resultados. No hay video, carrusel, métricas ficticias ni elementos flotantes decorativos.
 
-La búsqueda combina nombre y categoría, normaliza tildes y no distingue mayúsculas. El estado vacío permite limpiar filtros o consultar. Cada consulta desde una ficha incluye el producto y aclara su carácter demostrativo; los enlaces generales solicitan asesoramiento. El número proviene del enlace de la página comercial, no de una normalización supuesta.
+El catálogo utiliza columna de categorías de 224 px y tres productos por fila en pantallas amplias. Bajo 1250 px, dos columnas; bajo 960 px, categorías horizontales; bajo 560 px, una pieza amplia por fila. Se mantiene completa cada celda cuadrada del atlas.
 
-## Accesibilidad y movimiento
+Las fotografías tienen esquinas de 14 px; los botones son más rectos. Las fichas no se envuelven en cajas anidadas. Cada consulta tiene un botón sólido; cambia a amarillo al interactuar. El bloque de contacto amarillo cierra el recorrido.
 
-Idioma es-AR, enlace para saltar al catálogo, contador con aria-live, controles etiquetados, estados aria-pressed y foco visible. Foco interior en categorías para evitar recorte. Header WhatsApp conserva nombre accesible aunque se oculte el texto visual. Scroll suave y transiciones cortas desactivadas con prefers-reduced-motion.
+## Interacción y accesibilidad
 
-## Imágenes y verdad del contenido
+Búsqueda combinada por nombre y categoría, sin distinguir tildes o mayúsculas; contador aria-live; filtros aria-pressed. Estado vacío con limpieza de filtros y consulta. Idioma es-AR, salto al contenido, etiquetas para iconos y foco interior en las categorías desplazables. Enlaces externos con noopener noreferrer.
 
-Logo original sin redibujar. Seis piezas ilustrativas en atlas 3×2, con aviso de demostración. Tractor generado como imagen editorial, no como fotografía del establecimiento. No inventar códigos, stock, compatibilidades, testimonios ni cifras de trayectoria.
+Una única apertura de la fotografía en la portada; acercamiento moderado de piezas solo con puntero preciso. Toda animación y desplazamiento suave se desactivan con prefers-reduced-motion.
+
+## Verdad del contenido
+
+Logo original. Seis productos de muestra con indicación de imagen ilustrativa. Ningún precio, código, stock, compatibilidad, testimonio o cifra comercial inventado. Mensajes desde cada ficha incluyen el nombre del producto; consultas generales solicitan asesoramiento. WhatsApp tomado del enlace de la página comercial, pendiente de confirmación del cliente.
 
 ## Alcance de la revisión
 
-Revisión de código independiente completada; correcciones de etiqueta del enlace y foco aplicadas. Servicios corroborados en la página comercial. Compilación y pruebas de exportación se ejecutan por separado. No se efectuó ni se certifica QA visual de navegador. El flujo de selección de composiciones de Impeccable no se completó.
+En este turno el usuario eligió explícitamente «Solo mejorá el diseño por ahora». Por eso no se hicieron capturas, clics ni pruebas de navegador; no se certifica QA visual. Se verifican compilación, tipos y contratos de la exportación estática.
+
+El detector de Impeccable se ejecutó una vez y devolvió una lista vacía junto con una advertencia de una ronda de composiciones heredada sin cerrar. Esa advertencia no se ocultó ni se tomó como prueba de calidad. No se reinició aquel flujo ni se alteró su estado como efecto lateral de esta mejora.
