@@ -6,13 +6,13 @@
 web
 
 ## Product Purpose
-Prototipo de catálogo responsive para Alejandro Orlandini Tractores / Tractopartes Orlandini. Encontrar una pieza y consultar por WhatsApp, sin mostrar precios.
+Prototipo de catálogo responsive para Alejandro Orlandini Tractores / Tractopartes Orlandini. Localizar una pieza entre un inventario potencial de más de 15.000 repuestos y consultar por WhatsApp, sin mostrar precios.
 
 ## Users
 Inferencia de trabajo: propietarios de tractores, mecánicos y comercios de repuestos, consultando desde teléfono o escritorio.
 
 ## Capabilities and Constraints
-Sitio de cuatro páginas: Inicio, Nosotros, Catálogo y Contacto. Catálogo sin precios, categorías, búsqueda, consulta específica por producto. El usuario solicitó conservar colores y tipografías del diseño premium aprobado y tomar la organización funcional de la referencia. El usuario solicitó buscar el logo en internet o Instagram. No modificar el proyecto GymNode vecino. Stock, códigos y compatibilidades exactas no fueron provistos: cualquier muestra debe declararse como tal.
+Sitio de cuatro páginas: Inicio, Nosotros, Catálogo y Contacto. El Catálogo funciona como buscador por nombre, código, marca o modelo, con acceso alternativo por ocho categorías, filtros, ficha detallada y consulta específica por producto. El usuario solicitó conservar colores y tipografías del diseño premium aprobado. No modificar el proyecto GymNode vecino. Stock, códigos, medidas y compatibilidades exactas no fueron provistos: cualquier muestra debe declararse como tal.
 
 ## Brand Commitments
 Nombre Orlandini. Inspiración funcional de carlosandretich.com/productos; no copiar composición, colores, tipografías ni contenido. Priorizar las skills frontend-design de Anthropic e Impeccable de Paul Bakaus.
@@ -25,4 +25,4 @@ Página comercial: https://tractopartes-orlandini.laguia.online/ . Publica repue
 ## Product Principles
 La página comercial consultada publica explícitamente venta mayorista/minorista y envíos a todo el país; son la fuente de esos dos servicios en el prototipo, sujetos a confirmación antes del lanzamiento.
 
-La pieza es protagonista; cada consulta incluye su nombre; no inventar stock ni compatibilidades; lectura y contacto cómodos en móvil.
+Encontrar la pieza es la tarea protagonista; no presentar miles de repuestos como una tienda para recorrer. Cada consulta incluye nombre y código. No inventar stock y marcar de forma visible códigos, marcas, medidas y compatibilidades demostrativas; lectura y contacto cómodos en móvil.

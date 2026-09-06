@@ -6,8 +6,8 @@
 
 ## Aplicación en esta mejora
 
-Frontend-design: identidad específica para maquinaria, tipografía como elemento principal, composición deliberada, un solo movimiento de entrada y eliminación del texto minúsculo.
+Frontend-design: identidad específica para maquinaria, tipografía como elemento principal, buscador como foco de la superficie y atlas técnico coherente para las categorías.
 
-Impeccable: contexto del producto, criterios bolder para amplificar la identidad existente y craft-floor/polish para la consistencia del código y los estados. Se mantienen logo, colores, fuentes y funciones.
+Impeccable: modo Operate para priorizar encontrar una pieza, estados de búsqueda, filtros dependientes, ficha modal, accesibilidad y adaptación responsive. Se mantienen logo, colores y fuentes.
 
-El usuario pidió solo diseño, sin pruebas de navegador. No se ejecutaron capturas, clics ni revisión visual. El estado de propuestas visuales heredado del primer prototipo no se reparó ni se interpretó como aprobación; esta tarea es una mejora sobre el sitio ya publicado. El modo de trabajo por defecto para futuras propuestas sigue sin configurarse.
+La implementación se revisó en navegador real en escritorio y móvil. Se verificaron búsqueda, navegación por categoría, filtros, modal, Escape y devolución de foco. Un pase del detector de Impeccable no produjo hallazgos.

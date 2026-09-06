@@ -2,6 +2,11 @@
 
 Los logos provienen de los enlaces públicos documentados en README.md. Las fuentes se conservan con su licencia.
 
+## public/categorias-repuestos.png
+Generada con OpenAI Imagegen como atlas técnico 4×2 para las ocho categorías del buscador: Motor, Filtros, Transmisión, Hidráulica, Electricidad, Rodamientos, Correas y Frenos. Es un recurso ilustrativo sin equivalencia comercial ni marca garantizada. Prompt exacto:
+
+Use case: stylized-concept. Asset type: website category illustration atlas for an agricultural tractor spare-parts catalog. Create one polished 4-by-2 atlas containing eight equal rectangular technical product illustrations, one subject centered in each cell, in this exact row-major order: engine block with piston; cylindrical air and oil filters; transmission gears with clutch disc; hydraulic pump with short cylinder; alternator with starter motor and small wire; tapered roller bearing; paired industrial drive belts; brake disc with brake shoe. Uniform very light cool gray studio background, generous clean margins, no borders or labels. Refined technical editorial illustration with realistic machined-metal forms, deep navy #142f4b, muted steel gray and restrained yellow #f8ce44 accents. No text, numbers, logos, trademarks, brand identifiers, watermark, people or complete tractor. Every cell independently crop-safe.
+
 ## public/productos-muestra.png
 Generada con OpenAI Imagegen, 1536×1024, seis celdas 512×512. Ilustrativa, sin equivalencia comercial garantizada. Prompt exacto:
 

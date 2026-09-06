@@ -14,12 +14,14 @@ Se retiraron del Inicio: eslogan, buscador, franja de servicios, presentación d
 ## Páginas y componentes compartidos
 Navegación Inicio, Nosotros, Catálogo y Contacto; aria-current para página activa, idioma es-AR, un h1 por ruta, salto al contenido y metadatos independientes. Pie azul con logo original, páginas, ubicación y WhatsApp.
 Nosotros mantiene presentación institucional, imagen ilustrativa, públicos atendidos y cobertura. Contacto mantiene WhatsApp, domicilio y guía de consulta sin formulario ficticio ni horarios inventados.
-Catálogo mantiene buscador, filtros y seis productos de muestra sin precios. Tres columnas con categorías laterales en escritorio amplio, dos bajo 1250 px, categorías horizontales bajo 960 px y una columna bajo 560 px. Las URL con q y categoria siguen admitidas.
+Catálogo es una superficie Operate orientada a localizar repuestos, no una vidriera de productos. El buscador ocupa la máxima jerarquía y activa resultados globales desde tres caracteres sin instrucción permanente. En reposo se muestran ocho accesos visuales: Motor, Filtros, Transmisión, Hidráulica, Electricidad, Rodamientos, Correas y Frenos. Una categoría seleccionada muestra búsqueda contextual, filtros dependientes de marca/modelo y un listado compacto. Las URL conservan q, categoria, marca y modelo.
+
+Los resultados se presentan en una sola columna con miniatura, nombre, código, familia, marca y compatibilidad resumida. El bloque informativo abre una ficha modal accesible con especificaciones; WhatsApp permanece como acción independiente. En móvil la ficha se apoya en el borde inferior y su acción queda visible. El atlas técnico de categorías se reutiliza cuando un repuesto no tiene imagen propia.
 
 ## Interacción y verdad
-Búsqueda sin distinguir tildes o mayúsculas, filtros combinados, contador aria-live, estado vacío con recuperación. Consulta específica por WhatsApp con el nombre de la pieza. Foco visible y reduced-motion respetado. Fuentes y activos locales, procedencia en ASSETS.md.
-No inventar stock, códigos, compatibilidades, plazos, historia, cifras, marcas representadas o testimonios. Imágenes y productos ilustrativos. Contacto comercial pendiente de confirmación.
+Búsqueda ponderada sin distinguir tildes o mayúsculas: primero código exacto, luego comienzo de código o nombre, nombre parcial, marca/modelo, compatibilidad y alias. Filtros combinados, contador aria-live y estado vacío con recuperación. Consulta específica por WhatsApp con nombre y código. Foco visible y reduced-motion respetado. Fuentes y activos locales, procedencia en ASSETS.md.
+No inventar stock, plazos, historia, cifras, marcas representadas o testimonios. Los 32 repuestos, códigos, aplicaciones, medidas e imágenes del prototipo son demostrativos y se declaran como tales; deben reemplazarse por datos confirmados antes de publicar.
 
 ## Revisión y skills
 frontend-design guía jerarquía y composición; Impeccable distill/craft-floor guía quitar redundancias conservando las funciones en sus destinos. No se inició una ronda de alternativas.
-Compilación estática, TypeScript y nueve pruebas de contratos y filtros. No se hicieron pruebas visuales de navegador: siguen fuera del alcance solicitado. Un pase del detector, cero hallazgos mecánicos y advertencia heredada COMP_ROUND_OPEN; no se alteró el estado de esa ronda ni se afirmó aprobación visual.
+Compilación estática, TypeScript y nueve pruebas de contratos y filtros. Revisión en navegador real en escritorio y móvil: portada, búsqueda global, categoría, filtros dependientes, modal, Escape y devolución de foco. El defecto de traslación del modal móvil detectado en esa pasada fue corregido y verificado. Un pase del detector de Impeccable, cero hallazgos mecánicos.

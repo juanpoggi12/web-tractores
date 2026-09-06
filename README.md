@@ -8,7 +8,7 @@ Catálogo responsive sin precios, con búsqueda por nombre/familia, categorías 
 
 ## Contenido pendiente de aprobación
 
-- Los seis productos y sus imágenes son demostrativos. No representan un inventario verificado ni prometen compatibilidad.
+- Los 32 repuestos, sus códigos, aplicaciones, medidas e imágenes son demostrativos. No representan un inventario verificado ni prometen compatibilidad.
 - El WhatsApp +543492414532 fue tomado literalmente del enlace de la página comercial; confirmar vigencia con el cliente. No se envió ningún mensaje.
 - Confirmar domicilio, condiciones de envío y nombre comercial definitivo.
 - Sustituir muestras por catálogo y fotografías aprobados. No se incluye carrito, pagos ni precios.
@@ -26,7 +26,7 @@ Catálogo responsive sin precios, con búsqueda por nombre/familia, categorías 
 - Anthropic frontend-design: https://github.com/anthropics/skills/tree/main/skills/frontend-design . Dirección industrial específica, jerarquía tipográfica, contenido concreto.
 - Paul Bakaus Impeccable: https://github.com/pbakaus/impeccable . Contexto de producto, criterios craft-floor, estados vacíos, foco, adaptación responsive y revisión de fuente.
 - OpenAI Sites: estructura, exportación estática, alojamiento privado. OpenAI Imagegen: fotografía agrícola e imágenes ilustrativas de piezas.
-- Se aplicaron criterios de ambas skills de diseño; no se completó el flujo opcional de elección de tres composiciones de Impeccable. No se afirma aprobación visual ni prueba de navegador. La revisión está limitada a fuente, compilación y pruebas de salida estática.
+- Se aplicaron criterios de ambas skills de diseño. El catálogo se revisó en navegador real en escritorio y móvil, incluidos búsqueda, categoría, filtros dependientes, ficha modal y devolución de foco. La revisión no implica aprobación comercial de los datos demostrativos.
 
 ## Mantenimiento
 

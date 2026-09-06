@@ -6,20 +6,12 @@ import { resolve } from 'node:path';
 const root = resolve(import.meta.dirname, '..');
 const html = readFileSync(resolve(root, 'dist/client/catalogo.html'), 'utf8');
 
-test('Catálogo exportado: seis consultas específicas, sin importes', () => {
-  const anchors = [...html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)];
-  const products = anchors.filter(m => m[1].includes('Consultar por WhatsApp:'));
-  assert.equal(products.length, 6);
-  for (const anchor of products) {
-    const href = anchor[1].match(/href="([^"]+)"/)?.[1];
-    assert.ok(href);
-    const url = new URL(href.replaceAll('&amp;', '&'));
-    assert.equal(url.hostname, 'wa.me');
-    assert.equal(url.pathname, '/543492414532');
-    const message = url.searchParams.get('text');
-    assert.ok(message.includes('catálogo de muestra'));
-    assert.ok(message.includes('compatibilidad'));
-    assert.match(message, /Vi “[^”]+”/);
+test('Catálogo exportado: búsqueda primero, ocho categorías y sin importes', () => {
+  assert.ok(html.includes('placeholder="Buscar por nombre, código, marca o modelo"'));
+  assert.equal([...html.matchAll(/class="category-card"/g)].length, 8);
+  assert.equal(html.includes('product-result'), false, 'La portada no debe renderizar todos los repuestos');
+  for (const category of ['Motor', 'Filtros', 'Transmisión', 'Hidráulica', 'Electricidad', 'Rodamientos', 'Correas', 'Frenos']) {
+    assert.ok(html.includes(category), 'Categoría ausente: ' + category);
   }
   const visibleText = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/<[^>]*>/g, ' ');
   assert.equal(/(?:ARS|USD|\$)\s*\d[\d.,]*/.test(visibleText), false, 'No deben mostrarse importes');
@@ -27,8 +19,8 @@ test('Catálogo exportado: seis consultas específicas, sin importes', () => {
 
 test('Idioma, contenido y recursos locales presentes', () => {
   assert.match(html, /lang="es-AR"/);
-  for (const id of ['contenido', 'catalog-title', 'resultados']) assert.ok(html.includes('id="' + id + '"'));
-  for (const asset of ['orlandini-logo.webp', 'productos-muestra.png', 'tractor-campo.png', 'fonts/barlow-600.ttf', 'fonts/manrope-400.ttf', 'fonts/manrope-600.ttf']) {
+  for (const id of ['contenido', 'catalog-title', 'category-title']) assert.ok(html.includes('id="' + id + '"'));
+  for (const asset of ['orlandini-logo.webp', 'productos-muestra.png', 'categorias-repuestos.png', 'tractor-campo.png', 'fonts/barlow-600.ttf', 'fonts/manrope-400.ttf', 'fonts/manrope-600.ttf']) {
     assert.ok(existsSync(resolve(root, 'dist/client', asset)), 'Recurso ausente: ' + asset);
   }
   assert.ok(html.includes('Catálogo demostrativo'));
@@ -74,26 +66,38 @@ test('Inicio institucional sin mezclar herramientas o secciones del catálogo', 
   assert.ok(main.includes('href="/catalogo"'));
 });
 
-test('Filtros combinados toleran tildes, espacios y mayúsculas', async () => {
+test('Búsqueda ponderada y filtros toleran tildes, espacios y mayúsculas', async () => {
   const ts = await import('typescript');
   const source = readFileSync(resolve(root, 'lib/catalog.ts'), 'utf8');
   const { outputText } = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } });
-  const { filterProducts, categories, products } = await import('data:text/javascript;base64,' + Buffer.from(outputText).toString('base64'));
-  assert.equal(filterProducts('', categories[0]).length, products.length);
-  assert.equal(filterProducts('  HIDRAULICA  ', categories[0])[0].id, 'bomba-hidraulica');
-  assert.equal(filterProducts('bomba', 'Motor y filtros')[0].id, 'bomba-agua');
-  assert.equal(filterProducts('zzzz', categories[0]).length, 0);
-  assert.equal(filterProducts('bomba', 'Tren delantero').length, 0);
+  const { searchProducts, categories, products, getBrands, getModels, whatsapp } = await import('data:text/javascript;base64,' + Buffer.from(outputText).toString('base64'));
+  assert.equal(categories.length, 8);
+  assert.equal(products.length, 32);
+  assert.equal(searchProducts({ categoryId: 'motor' }).length, 4);
+  assert.equal(searchProducts({ query: '  HIDRAULICA  ' })[0].id, 'bomba-hidraulica');
+  assert.equal(searchProducts({ query: 'MOT-1042' })[0].id, 'conjunto-pistones');
+  assert.equal(searchProducts({ query: 'bomba', categoryId: 'motor' })[0].id, 'bomba-agua');
+  assert.equal(searchProducts({ query: 'zzzz' }).length, 0);
+  assert.equal(searchProducts({ categoryId: 'filtros', brand: 'Fiat', model: '780' })[0].id, 'filtro-aceite');
+  assert.ok(getBrands('motor').includes('Fiat'));
+  assert.deepEqual(getModels('motor', 'Fiat'), ['780', '800']);
+  const product = products[0];
+  const message = new URL(whatsapp(product)).searchParams.get('text');
+  assert.ok(message.includes(product.name));
+  assert.ok(message.includes(product.code));
+  assert.ok(products.some(item => !item.image), 'Debe haber repuestos que usen imagen genérica de categoría');
 });
 
-test('El catálogo conserva acceso directo a categorías por URL', async () => {
+test('El catálogo conserva búsqueda y filtros en la URL', async () => {
   const ts = await import('typescript');
   const source = readFileSync(resolve(root, 'lib/catalog.ts'), 'utf8');
   const { outputText } = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext } });
-  const { readCatalogLocation, categories } = await import('data:text/javascript;base64,' + Buffer.from(outputText).toString('base64'));
-  for (const category of categories.slice(1)) {
-    assert.equal(readCatalogLocation('?categoria=' + encodeURIComponent(category)).category, category);
+  const { readCatalogLocation, catalogLocation, categories } = await import('data:text/javascript;base64,' + Buffer.from(outputText).toString('base64'));
+  for (const category of categories) {
+    assert.equal(readCatalogLocation('?categoria=' + category.id).categoryId, category.id);
   }
-  assert.deepEqual(readCatalogLocation('?q=bomba&categoria=inexistente'), { query: 'bomba', category: categories[0] });
-  assert.deepEqual(readCatalogLocation(''), { query: '', category: categories[0] });
+  const state = { query: 'bomba', categoryId: 'hidraulica', brand: 'Massey Ferguson', model: '1175' };
+  assert.deepEqual(readCatalogLocation(catalogLocation(state).split('?')[1] ? '?' + catalogLocation(state).split('?')[1] : ''), state);
+  assert.deepEqual(readCatalogLocation('?q=bomba&categoria=inexistente'), { query: 'bomba', categoryId: '', brand: '', model: '' });
+  assert.deepEqual(readCatalogLocation(''), { query: '', categoryId: '', brand: '', model: '' });
 });
